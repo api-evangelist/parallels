@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of parallels.com + docs.parallels.com /.well-known/ and /llms.txt
+hosts:
+- host: https://docs.parallels.com
+  documents:
+  - path: /llms.txt
+    status: 200
+    file: ../llms/parallels-llms.txt
+    note: AI documentation index (llms.txt standard)
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+- host: https://www.parallels.com
+  documents:
+  - path: /llms.txt
+    status: 200
+    note: present but returns marketing index; docs.parallels.com/llms.txt is the canonical AI index
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404

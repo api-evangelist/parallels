@@ -1,8 +1,16 @@
 aid: parallels
 name: Parallels
-description: 'Parallels is a company surfaced as a portfolio company of bessemer-venture-partners and
-  added to the API Evangelist network as a stub for enrichment. Sector: unknown. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  Parallels is a virtualization and remote-access software company (part of Alludo,
+  with the Parallels virtualization division held by KKR) best known for Parallels
+  Desktop for Mac, which runs Windows, Linux and other operating systems on Apple
+  hardware for over 7 million users. Its enterprise line, Parallels RAS (Remote
+  Application Server), delivers virtual apps and desktops (VDI/DaaS) across on-premises
+  and hybrid-cloud deployments. For developers and IT admins, Parallels exposes a
+  self-hosted Parallels RAS REST API (token-authenticated, port 20443) plus a RAS
+  PowerShell administration module and the prlctl/prlsrvctl command-line tools, and
+  publishes official Terraform, Packer, Vagrant, and Docker Machine integrations for
+  Parallels Desktop from its GitHub organization.
 url: https://raw.githubusercontent.com/api-evangelist/parallels/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +18,53 @@ x-backed-by:
 - bessemer-venture-partners
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://www.parallels.com/static/pl/fileadmin/res/img/general/default-og-logo.png
 tags:
 - Company
-- Unknown
-apis: []
+- Virtualization
+- Remote Desktop
+- VDI
+- DaaS
+- Mac
+- Infrastructure
+- IT Management
+apis:
+- name: Parallels RAS REST API
+  description: >-
+    Self-hosted administration REST API for Parallels RAS (Remote Application Server).
+    Applications authenticate with administrator credentials to obtain an authToken,
+    then manage infrastructure (agents, providers, RD session hosts, VDI), farm and
+    site settings, publishing (apps/desktops/folders), policies, and RD sessions.
+  humanURL: https://docs.parallels.com/landing/ras-rest-api-guide
+  baseURL: 'https://api-host:20443/api'
+  properties:
+  - type: Documentation
+    url: https://docs.parallels.com/landing/ras-rest-api-guide
+  - type: APIReference
+    url: https://docs.parallels.com/landing/ras-rest-api-guide/api-reference
+  - type: GettingStarted
+    url: https://docs.parallels.com/landing/ras-rest-api-guide
+  - type: Authentication
+    url: authentication/parallels-authentication.yml
+  - type: Conventions
+    url: conventions/parallels-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/parallels-lifecycle.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +73,48 @@ maintainers:
 common:
 - type: Website
   url: https://www.parallels.com/
+- type: DeveloperPortal
+  url: https://docs.parallels.com/
+- type: Documentation
+  url: https://docs.parallels.com/landing/ras-rest-api-guide
+- type: APIReference
+  url: https://docs.parallels.com/landing/ras-rest-api-guide/api-reference
+- type: GettingStarted
+  url: https://docs.parallels.com/landing/ras-rest-api-guide
+- type: Support
+  url: https://www.parallels.com/support/
+- type: Blog
+  url: https://www.parallels.com/blogs/
+- type: GitHubOrganization
+  url: https://github.com/Parallels
+- type: SignUp
+  url: https://my.parallels.com/
+- type: StatusPage
+  url: https://status.parallels.com/
+- type: Authentication
+  url: authentication/parallels-authentication.yml
+- type: Conventions
+  url: conventions/parallels-conventions.yml
+- type: Lifecycle
+  url: lifecycle/parallels-lifecycle.yml
+- type: ChangeLog
+  url: changelog/parallels-changelog.yml
+- type: Deprecation
+  url: https://kb.parallels.com/en/122073
+- type: CLI
+  url: cli/parallels-cli.yml
+- type: Packages
+  url: packages/parallels-packages.yml
+- type: SDKs
+  url: packages/parallels-packages.yml
+- type: WellKnown
+  url: well-known/parallels-well-known.yml
+- type: LLMsTxt
+  url: llms/parallels-llms.txt
+- type: DomainSecurity
+  url: security/parallels-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v1

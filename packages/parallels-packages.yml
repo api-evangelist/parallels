@@ -1,0 +1,51 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/Parallels + package registries
+notes: >-
+  Parallels ships no conventional server-side REST SDK (the RAS REST API is a
+  self-hosted admin API). First-party client tooling is infrastructure-oriented:
+  the RAS PowerShell admin module, and official Terraform/Packer/Vagrant/Docker
+  Machine integrations for Parallels Desktop, published from the Parallels GitHub org.
+packages:
+- language: powershell
+  registry: installer
+  name: RASAdmin
+  url: https://github.com/Parallels/RAS-PowerShell
+  install: Import-Module RASAdmin
+  official: true
+  note: Parallels RAS PowerShell admin module (formerly PSAdmin); distributed with the RAS installer (ADDLOCAL=F_PowerShell), not a public gallery.
+- language: hcl
+  registry: terraform
+  name: Parallels/parallels-desktop
+  url: https://registry.terraform.io/providers/Parallels/parallels-desktop/latest
+  install: 'terraform { required_providers { parallels-desktop = { source = "Parallels/parallels-desktop" } } }'
+  official: true
+  note: Official Terraform provider for Parallels Desktop.
+- language: go
+  registry: github
+  name: packer-plugin-parallels
+  url: https://github.com/Parallels/packer-plugin-parallels
+  install: packer plugins install github.com/Parallels/parallels
+  official: true
+  note: Official HashiCorp Packer builder plugin for Parallels Desktop.
+- language: ruby
+  registry: rubygems
+  name: vagrant-parallels
+  url: https://rubygems.org/gems/vagrant-parallels
+  install: vagrant plugin install vagrant-parallels
+  official: true
+  note: Official Vagrant provider for Parallels Desktop.
+- language: go
+  registry: github
+  name: docker-machine-parallels
+  url: https://github.com/Parallels/docker-machine-parallels
+  install: 'download from GitHub releases'
+  official: true
+  note: Official Docker Machine driver for Parallels Desktop.
+- language: typescript
+  registry: github
+  name: parallels-desktop-github-action
+  url: https://github.com/Parallels/parallels-desktop-github-action
+  install: 'uses: parallels/parallels-desktop-github-action@v1'
+  official: true
+  note: Official GitHub Action for running Parallels Desktop VMs in CI.

@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.parallels.com/ (Parallels Desktop CLI + RAS PowerShell)
+clis:
+- name: prlctl
+  scope: Parallels Desktop for Mac
+  docs: https://docs.parallels.com/landing/pd-guides/parallels-desktop-for-mac.md
+  description: Command-line tool to create, configure, register, and control Parallels Desktop virtual machines.
+  install: bundled with Parallels Desktop for Mac
+  command_families:
+  - list — list registered virtual machines
+  - create — create a new virtual machine
+  - start / stop / restart / suspend / pause — control VM power state
+  - set — change VM configuration (cpu, memory, devices)
+  - clone / delete / register / unregister — manage VM lifecycle
+  - snapshot / snapshot-list / snapshot-delete — manage snapshots
+  - exec / enter — run commands inside a running VM
+- name: prlsrvctl
+  scope: Parallels Desktop host / server
+  description: Command-line tool to manage the Parallels Desktop host — licensing, host settings, networking, and usb.
+  install: bundled with Parallels Desktop for Mac
+  command_families:
+  - info — show host and license information
+  - install-license / deactivate-license — manage licensing
+  - net — manage host virtual networks
+  - usb — manage USB device assignment
+- name: RASAdmin (PowerShell)
+  scope: Parallels RAS (Remote Application Server)
+  docs: https://docs.parallels.com/landing/ras-powershell-api-guide/index-1
+  description: PowerShell administration surface for Parallels RAS — the scripting counterpart to the RAS REST API.
+  install: Import-Module RASAdmin
+  command_families:
+  - New-RASSession — authenticate and open a RAS admin session
+  - Get-Command -Module RASAdmin — enumerate available cmdlets
+  - RASGW / RASRDS / RASVDI — manage gateways, session hosts, VDI
+  - RASPubApp / RASPubDesktop — manage published applications and desktops
+  - Invoke-RASApply — commit pending configuration changes

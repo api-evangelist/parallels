@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.parallels.com/landing/ras-rest-api-guide
+api: Parallels RAS REST API
+notes: >-
+  Cross-cutting request/response semantics for the Parallels RAS REST API,
+  captured from the REST API guide. No downloadable OpenAPI spec is published.
+authentication:
+  style: session token
+  header: auth_token
+  detail: Obtain authToken via POST /api/session/logon, send on every request.
+  ref: ../authentication/parallels-authentication.yml
+transport:
+  protocol: https
+  base_url_pattern: 'https://<API-host>:20443/api/<URI>'
+  default_port: 20443
+  content_type: application/json
+media_types:
+  request: application/json
+  response: application/json
+versioning:
+  style: media-type parameter
+  header: 'Content-Type: application/json; api-version=1.0'
+  detail: API version is negotiated via the api-version parameter on the Content-Type header.
+  ref: ../lifecycle/parallels-lifecycle.yml
+idempotency:
+  supported: false
+  detail: No documented idempotency-key mechanism.
+pagination:
+  documented: false
+  detail: List resources are returned directly; no documented cursor/offset pagination contract.
+error_envelope:
+  format: json
+  detail: Errors are returned as JSON with HTTP status codes; no RFC 9457 problem+json contract documented.
+  ref: null
+rate_limiting:
+  documented: false

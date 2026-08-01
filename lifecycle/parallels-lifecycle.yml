@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.parallels.com/ + https://kb.parallels.com/en/131037
+api: Parallels RAS REST API
+versioning:
+  scheme: media-type-parameter
+  current: '1.0'
+  header: 'Content-Type: application/json; api-version=1.0'
+  product_version: 'Parallels RAS 21.2'
+  release_history: https://docs.parallels.com/landing/ras-admin-guide/parallels-ras-21-administrators-guide/introduction/parallels-ras-21-release-history
+deprecation:
+  policy_url: https://kb.parallels.com/en/122073
+  detail: Parallels publishes product lifecycle / support-scope announcements via the knowledge base; support windows are per product version.
+  sunset_header: false
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.parallels.com/
+support_scope: https://kb.parallels.com/en/122073
+deprecated_operations: []

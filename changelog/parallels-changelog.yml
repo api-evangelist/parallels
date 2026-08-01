@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: searched
+source: https://kb.parallels.com/en/131037
+api: Parallels RAS (Remote Application Server)
+scheme: product-version
+current_version: '21.2'
+changelog_url: https://kb.parallels.com/en/131037
+whats_new_url: https://www.parallels.com/products/ras/whats-new/
+entries:
+- version: '21.2'
+  date: '2026-06-23'
+  breaking: false
+  highlights:
+  - Multi-process support for the User Portal server to improve scalability and performance.
+  - URL redirection policy to redirect users to different farms with notifications.
+  - Support for launching AVD resources using the Microsoft Windows App.
+- version: 21.1 Update 1
+  date: '2026-04-09'
+  breaking: false
+  highlights:
+  - Nutanix AHV (AOS) 6.10 LTS support.
+  - Capture client public IP and pass it as a RADIUS attribute during MFA.
+- version: '21.1'
+  date: '2026-02-26'
+  breaking: false
+  highlights:
+  - Encryption added for data between RAS Secure Gateway and Connection Broker.
+  - Cross-Site WebSocket Hijacking (CSWSH) vulnerability addressed.
+- version: 21.0 Update 1
+  date: '2026-01-22'
+  breaking: false
+  highlights:
+  - Node.js and OpenSSL 3.0.17 security upgrades; Cookie SameSite=Strict.

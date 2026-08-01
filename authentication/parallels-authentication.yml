@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.parallels.com/landing/ras-rest-api-guide
+docs: https://docs.parallels.com/landing/ras-rest-api-guide
+notes: >-
+  The Parallels RAS REST API is a self-hosted admin API (no downloadable OpenAPI
+  spec is published). Authentication is a bespoke token scheme: administrators POST
+  credentials to a logon endpoint and receive an authToken that is echoed on every
+  subsequent request via the auth_token header. Not OAuth2/OIDC.
+summary:
+  types: [token]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+- name: RASAuthToken
+  type: token
+  in: header
+  parameter: auth_token
+  logon_endpoint: 'POST https://<API-host>:20443/api/session/logon'
+  logon_body: '{"username": "...", "password": "...", "tenantId": ...}'
+  response_field: authToken
+  description: >-
+    Log on with administrator credentials to obtain an authToken, then send it in
+    the auth_token header on all subsequent requests. Tokens are session-scoped.
+- name: SSO
+  type: sso
+  scope: Parallels My Account / Management Portal
+  description: >-
+    Parallels Desktop Enterprise and the Management Portal support SSO with
+    Azure/Entra ID, Okta, Ping Identity, JumpCloud, and Google Workspace via
+    Parallels My Account (product sign-in, distinct from the RAS REST API token).
